@@ -5,7 +5,7 @@
 \alias{getVideoUrl}
 \title{Deprecated functions in the N2H4 package}
 \usage{
-getVideoUrl(...)
+getVideoUrl(turl)
 }
 \arguments{
 \item{...}{arguments to be passed to the functions

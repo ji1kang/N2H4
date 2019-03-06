@@ -54,7 +54,7 @@ NULL
 
 ##' @rdname Deprecated
 ##' @export
-getVideoUrl <- function(...) {
+getVideoUrl <- function(turl) {
   .deprecated_fun("video_url_get", "0.6.0")
-  video_url_get(...)
+  video_url_get(news_link = turl)
 }

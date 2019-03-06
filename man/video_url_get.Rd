@@ -4,10 +4,10 @@
 \alias{video_url_get}
 \title{Get video clip download url in news}
 \usage{
-video_url_get(tar_url)
+video_url_get(news_link)
 }
 \arguments{
-\item{tar_url}{like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.}
+\item{news_link}{like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.}
 }
 \value{
 Get character url.

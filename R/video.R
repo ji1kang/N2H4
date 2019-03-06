@@ -2,24 +2,24 @@
 #'
 #' Get naver news video url
 #'
-#' @param tar_url like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.
+#' @param news_link like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.
 #' @return Get character url.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content add_headers user_agent
-video_url_get <- function(tar_url) {
+video_url_get <- function(news_link) {
   . <- NULL
   uat <-
     httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-  turl <- "http://news.naver.com/"
+  ref <- "http://news.naver.com/"
 
-  httr::GET(tar_url, uat) %>%
+  httr::GET(news_link, uat) %>%
     httr::content() %>%
     rvest::html_nodes("iframe") %>%
     rvest::html_attr("_src") %>%
     .[!is.na(.)] %>%
     paste0("http://news.naver.com", .) %>%
-    httr::GET(uat, httr::add_headers(Referer = turl)) %>%
+    httr::GET(uat, httr::add_headers(Referer = ref)) %>%
     httr::content() %>%
     rvest::html_nodes("script") %>%
     rvest::html_text(src) %>%
@@ -39,6 +39,5 @@ video_url_get <- function(tar_url) {
     .$videos %>%
     .$list %>%
     .[[1]] %>%
-    .$source %>%
-    return()
+    .$source
 }
