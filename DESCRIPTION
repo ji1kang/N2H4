@@ -29,5 +29,4 @@ Imports:
     tidyr,
     tibble,
     dplyr,
-    rlang,
     magrittr
