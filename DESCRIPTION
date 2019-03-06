@@ -28,4 +28,6 @@ Imports:
     jsonlite,
     tidyr,
     tibble,
-    dplyr
+    dplyr,
+    rlang,
+    magrittr
