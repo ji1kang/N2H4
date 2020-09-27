@@ -25,6 +25,12 @@ install.packages("N2H4")
 library(N2H4)
 ```
 
+## 카테고리별로 뉴스 수집 (기간설정필요, Custom Code)
+```
+sudo R --slave -f collect_by_category.R
+```
+
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
